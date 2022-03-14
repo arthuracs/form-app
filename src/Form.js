@@ -58,6 +58,7 @@ export default class Form extends React.Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleReset = this.handleReset.bind(this)
         
         this.countryArr = getSortedCountryList();
 
