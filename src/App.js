@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Form from './Form';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
           React Form
         </p>
       </header>
-      
+
       <Form />
     </div>
   );
