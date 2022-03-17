@@ -53,12 +53,6 @@
   margin-bottom: 5px
 }
 
-.form .checkbox {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 5px;
-}
-
 .input-label, .radio-group-label {
   margin: 0 0 4px 0;
   color: #333333;

@@ -3,6 +3,7 @@ import countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
 import Input from './Input/Input';
 import Select from './Select/Select';
+import Checkbox from './Checkbox/Checkbox';
 
 function getSortedCountryList() {
     countries.registerLocale(enLocale);
@@ -106,7 +107,7 @@ export default class Form extends React.Component {
             <form className="form" onSubmit={this.handleSubmit}>
                 
                 { Object.entries(inputFields).map(([id, label]) => (
-                    <React.Fragment>
+                    <React.Fragment key={id}>
                         <label htmlFor={id} className="input-label">
                             {label}
                         </label>
@@ -161,18 +162,15 @@ export default class Form extends React.Component {
                         />
                     </div>
                 </div>
-                <div className="checkbox">
-                    <input
-                        name="willLearn"
-                        id="willLearn"
-                        type="checkbox"
-                        checked={this.state.form.willLearn}
-                        onChange={this.handleChange} 
-                    />
-                    <label htmlFor="willLearn" className="checkbox-label">
-                        I promise I'll keep learning ;)
-                    </label>
-                </div>
+
+                <Checkbox 
+                    id="willLearn"
+                    checked={this.state.form.willLearn}
+                    onChange={this.handleChange}
+                >
+                    I promise I'll keep learning ;)
+                </Checkbox>
+
                 <button
                     className="btn" 
                     type="submit" 
