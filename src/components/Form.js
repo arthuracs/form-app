@@ -2,18 +2,19 @@ import React from 'react'
 import countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
 import Input from './Input/Input';
+import Select from './Select/Select';
 
 function getSortedCountryList() {
     countries.registerLocale(enLocale);
     const countryObj = countries.getNames("en", { select: "official" });
     const countryArr = Object.entries(countryObj).map(([key, value]) => {
         return {
-            label: value,
-            code: key
+            key: key,
+            value: value
         }
     })
     const sortedCountryArr = countryArr.sort((a, b) => {
-        return a.label.toLowerCase().localeCompare(b.label.toLowerCase());
+        return a.value.toLowerCase().localeCompare(b.value.toLowerCase());
     })
     return sortedCountryArr;
 }
@@ -100,7 +101,7 @@ export default class Form extends React.Component {
             email: "E-mail",
             phone: "Phone"
         };
-
+        
         return (
             <form className="form" onSubmit={this.handleSubmit}>
                 
@@ -109,7 +110,11 @@ export default class Form extends React.Component {
                         <label htmlFor={id} className="input-label">
                             {label}
                         </label>
-                        <Input id={id} inputValue={this.state.form[id]} onChange={this.handleChange} />
+                        <Input 
+                            id={id}
+                            inputValue={this.state.form[id]} 
+                            onChange={this.handleChange} 
+                        />
                     </React.Fragment>
                 ))
                 }
@@ -117,17 +122,14 @@ export default class Form extends React.Component {
                 <label htmlFor="country" className="input-label">
                     Country
                 </label>
-                <select 
-                    name="country"
-                    id="country"
-                    value={this.state.form.country} 
+                <Select 
+                    id="country" 
+                    inputValue={this.state.form.country} 
                     onChange={this.handleChange} 
-                >
-                    <option key="none" value="" disabled>Select a country...</option>
-                    { this.countryArr.map(({ label, code }) => (
-                        <option key={code} value={code}>{label}</option>
-                    ))}
-                </select>
+                    options={this.countryArr} 
+                    placeholder="Select a country..."
+                />
+
                 <div className="radio-group">
                     <div className="radio-group-label">
                         Cats or dogs?
