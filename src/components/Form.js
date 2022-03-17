@@ -4,6 +4,7 @@ import enLocale from "i18n-iso-countries/langs/en.json"
 import Input from './Input/Input';
 import Select from './Select/Select';
 import Checkbox from './Checkbox/Checkbox';
+import Button from './Button/Button';
 
 function getSortedCountryList() {
     countries.registerLocale(enLocale);
@@ -171,12 +172,12 @@ export default class Form extends React.Component {
                     I promise I'll keep learning ;)
                 </Checkbox>
 
-                <button
-                    className="btn" 
-                    type="submit" 
-                    disabled={Object.values(this.state.form).every(x => x === '' || x === null || x === false)}>
-                    Submit
-                </button>
+                <Button 
+                    label="Submit"
+                    click={this.onSubmit} 
+                    disabled={Object.values(this.state.form).every(x => x === '' || x === null || x === false)} 
+                />
+
             </form>
         )
     }
