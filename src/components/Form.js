@@ -1,6 +1,7 @@
 import React from 'react'
 import countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
+import Input from './Input/Input';
 
 function getSortedCountryList() {
     countries.registerLocale(enLocale);
@@ -94,38 +95,25 @@ export default class Form extends React.Component {
             return <Results response={this.state.form} onReset={() => this.handleReset()} />
         }
 
+        const inputFields = {
+            fullName: "Full name",
+            email: "E-mail",
+            phone: "Phone"
+        };
+
         return (
-            <form className="form" onSubmit={this.handleSubmit}> 
-                <label htmlFor="fullName" className="input-label">
-                    Full name
-                </label>
-                <input
-                    name="fullName"
-                    id="fullName"
-                    type="text"
-                    value={this.state.form.fullName}
-                    onChange={this.handleChange} 
-                />
-                <label htmlFor="email" className="input-label">
-                    E-mail
-                </label>
-                <input
-                    name="email"
-                    id="email"
-                    type="text"
-                    value={this.state.form.email}
-                    onChange={this.handleChange} 
-                />
-                <label htmlFor="phone" className="input-label">
-                    Phone
-                </label>
-                <input
-                    name="phone"
-                    id="phone"
-                    type="text"
-                    value={this.state.form.phone}
-                    onChange={this.handleChange} 
-                />
+            <form className="form" onSubmit={this.handleSubmit}>
+                
+                { Object.entries(inputFields).map(([id, label]) => (
+                    <React.Fragment>
+                        <label htmlFor={id} className="input-label">
+                            {label}
+                        </label>
+                        <Input id={id} inputValue={this.state.form[id]} onChange={this.handleChange} />
+                    </React.Fragment>
+                ))
+                }
+
                 <label htmlFor="country" className="input-label">
                     Country
                 </label>

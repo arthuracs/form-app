@@ -59,7 +59,7 @@
   margin-bottom: 5px;
 }
 
-input[type="text"], select {
+select {
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid gray;
@@ -68,8 +68,11 @@ input[type="text"], select {
 }
 
 .input-label, .radio-group-label {
-  margin-bottom: 5px;
-  color: #545454;
+  margin: 0 0 4px 0;
+  color: #333333;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .btn {
