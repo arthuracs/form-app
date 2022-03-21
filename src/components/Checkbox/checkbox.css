@@ -38,15 +38,22 @@
     border-radius: 2px;
 }
   
-/* On mouse-over, add a blue border color */
+/* On hover, add a blue border color */
 .checkbox:hover input ~ .checkmark {
     border: 1px solid #2F71D7;
 }
 
-/* On mouse-over when checked, add a blue background */
+/* On hover when checked, add a blue background */
 .checkbox:hover input:checked ~ .checkmark {
     background-color: #2F71D7;
     border: none;
+}
+
+/* On focus, add a blue outline */
+.checkbox input:focus ~ .checkmark {
+    border: 1px solid #2F71D7;
+    outline: 1px solid #78A4F6;
+    outline-offset: 3px;
 }
 
 /* When the checkbox is checked, add a blue background */
