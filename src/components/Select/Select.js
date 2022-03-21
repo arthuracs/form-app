@@ -5,6 +5,7 @@ export default function Select({id, inputValue, onChange, options, placeholder =
     return (
         <React.Fragment>
             <select 
+                className='select'
                 name={id}
                 id={id}
                 value={inputValue}

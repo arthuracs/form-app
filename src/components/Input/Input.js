@@ -5,6 +5,7 @@ export default function Input({id, inputValue, onChange}) {
     return (
         <React.Fragment>
             <input
+                className='input'
                 name={id}
                 id={id}
                 type="text"
