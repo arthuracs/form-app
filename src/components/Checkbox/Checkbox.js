@@ -12,7 +12,7 @@ export default function Checkbox({id, checked, onChange, children}){
                     checked={checked}
                     onChange={onChange} 
                 />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
                 {children}
             </label>
         </div>

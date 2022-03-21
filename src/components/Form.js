@@ -32,12 +32,11 @@ function Results({response, onReset}) {
                     )
                 })}
             </ul>
-            <button
-                className="btn" 
-                onClick={onReset}
-            >
-                Reset
-            </button>
+            <Button 
+                label="Reset"
+                click={onReset} 
+                type="outside"
+            />
         </div>
     )
 }
@@ -174,7 +173,8 @@ export default class Form extends React.Component {
 
                 <Button 
                     label="Submit"
-                    click={this.onSubmit} 
+                    click={this.onSubmit}
+                    type="primary" 
                     disabled={Object.values(this.state.form).every(x => x === '' || x === null || x === false)} 
                 />
 

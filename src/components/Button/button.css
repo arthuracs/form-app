@@ -1,15 +1,108 @@
 .button {
-    margin-top: 30px;
-    padding: 12.5px 16px;
     border: none;
     border-radius: 4px;
-    background-color: #5489DC;
     cursor: pointer;
-    /* width: 100%; */
-    font-size: 18px;
     color: #FFFFFF;
     font-weight: 400;
-    line-height: 20px;
     flex: 0;
 }
-  
+
+.button-large {
+    padding: 12.5px 16px;
+    min-height: 45px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.button-medium {
+    padding: 9.5px 14px;
+    min-height: 35px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.button-small {
+    padding: 8px 12px;
+    min-height: 30px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.button:disabled, .button:disabled:hover {
+    background-color: #F9F9F9;
+    border: 1px solid #CFCFCF;
+    box-sizing: border-box;
+    color: #CFCFCF;
+}
+
+/* Primary */
+.button-primary {
+    background-color: #5489DC;
+}    
+
+.button-primary:hover {
+    background-color: #2F71D7;
+}    
+
+.button-primary:active {
+    background-color: #1353B7;
+    outline: 2px solid #AAC4ED;
+    box-sizing: border-box;
+}
+
+/* Secondary */
+.button-secondary {
+    background-color: #FFFFFF;
+    color: #5489DC;
+    border: 1px solid #5489DC;
+    box-sizing: border-box;
+}    
+
+.button-secondary:hover {
+    color: #2F71D7;
+    border: 1px solid #2F71D7;
+    box-sizing: border-box;
+}    
+
+.button-secondary:active {
+    color: #5489DC;
+    border: 1px solid #2F71D7;
+    outline: 2px solid #EAF0FB;
+    box-sizing: border-box;
+}
+
+/* Danger */
+.button-danger {
+    background-color: #DA3849;
+}    
+
+.button-danger:hover {
+    background-color: #BF3140;
+}    
+
+.button-danger:active {
+    background-color: #A42A37;
+    outline: 2px solid #ED9BA4;
+    box-sizing: border-box;
+}
+
+/* Outside */
+.button-outside {
+    background-color: #FFFFFF;
+    color: #DA3849;
+    border: 1px solid #DA3849;
+    box-sizing: border-box;
+}    
+
+.button-outside:hover {
+    color: #BF3140;
+    border: 1px solid #BF3140;
+    box-sizing: border-box;
+}    
+
+.button-outside:active {
+    color: #BF3140;
+    border: 1px solid #BF3140;
+    outline: 2px solid #FAE6E8;
+    box-sizing: border-box;
+}
