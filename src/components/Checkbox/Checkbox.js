@@ -1,10 +1,11 @@
 import React from 'react'
+import Label from '../Label/Label'
 import './checkbox.css'
 
 export default function Checkbox({id, checked, onChange, children}){
     return (
         <div className="checkbox-container">
-            <label htmlFor={id} className="checkbox">
+            <Label forId={id} classes="checkbox">
                 <input
                     name={id}
                     id={id}
@@ -14,7 +15,7 @@ export default function Checkbox({id, checked, onChange, children}){
                 />
                 <span className="checkmark"></span>
                 {children}
-            </label>
+            </Label>
         </div>
     )
 }

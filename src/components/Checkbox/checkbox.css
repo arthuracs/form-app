@@ -8,7 +8,7 @@
 .checkbox {
     display: block;
     position: relative;
-    padding-left: 24px;
+    padding-left: 22px;
     margin-bottom: 12px;
     font-size: 14px;
     font-weight: 400;
@@ -29,7 +29,7 @@
 .checkmark {
     position: absolute;
     top: 3px;
-    left: 3px;
+    left: 1px;
     height: 14px;
     width: 14px;
     background-color: #FFFFFF;

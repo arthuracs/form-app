@@ -1,0 +1,78 @@
+.radio-group-label {
+    margin: 0 0 4px 0;
+    color: #333333;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+  
+.radio-input {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.radio-input input {
+    appearance: none;
+    margin: 0px 4px 5px 0px;
+    font: inherit;
+    color: currentColor;
+    width: 1em;
+    height: 1em;
+    background-color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 50%;
+
+    /* To align the :before to the horizontal and vertical center */
+    display: grid;
+    place-content: center;
+}
+
+.radio-input input:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: #5489DC;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 1px;
+}
+
+.radio-input input:hover {
+    border-color: #2F71D7;
+}
+
+.radio-input input:active {
+    border-color: #1353B7;
+}
+
+.radio-input input:checked {
+    border-color: #5489DC;
+}
+
+.radio-input input::before {
+    --size: 8px;
+    content: '';
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 100ms transform ease-in-out;
+    background-color: #5489DC;
+}
+
+.radio-input input:checked::before {
+    transform: scale(1);
+}
+
+.radio-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333333;
+}

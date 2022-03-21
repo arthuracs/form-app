@@ -5,6 +5,8 @@ import Input from './Input/Input';
 import Select from './Select/Select';
 import Checkbox from './Checkbox/Checkbox';
 import Button from './Button/Button';
+import Radio from './Radio/Radio';
+import Label from './Label/Label';
 
 function getSortedCountryList() {
     countries.registerLocale(enLocale);
@@ -108,9 +110,9 @@ export default class Form extends React.Component {
                 
                 { Object.entries(inputFields).map(([id, label]) => (
                     <React.Fragment key={id}>
-                        <label htmlFor={id} className="input-label">
+                        <Label forId={id}>
                             {label}
-                        </label>
+                        </Label>
                         <Input 
                             id={id}
                             inputValue={this.state.form[id]} 
@@ -120,9 +122,9 @@ export default class Form extends React.Component {
                 ))
                 }
 
-                <label htmlFor="country" className="input-label">
+                <Label forId="country">
                     Country
-                </label>
+                </Label>
                 <Select 
                     id="country" 
                     inputValue={this.state.form.country} 
@@ -131,37 +133,14 @@ export default class Form extends React.Component {
                     placeholder="Select a country..."
                 />
 
-                <div className="radio-group">
-                    <div className="radio-group-label">
-                        Cats or dogs?
-                    </div>
-                    <div className="radio-input">
-                        <label htmlFor="petPrefCats" className="radio-label">
-                            Cats
-                        </label>
-                        <input
-                            name="petPref"
-                            id="petPrefCats"
-                            type="radio"
-                            value="cats"
-                            checked={this.state.form.petPref === "cats"}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div className="radio-input">
-                        <label htmlFor="petPrefDogs" className="radio-label">
-                            Dogs
-                        </label>
-                        <input
-                            name="petPref"
-                            id="petPrefDogs"
-                            type="radio"
-                            value="dogs"
-                            checked={this.state.form.petPref === "dogs"}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                </div>
+                <Radio
+                    id="petPref"
+                    inputValue={this.state.form.petPref}
+                    onChange={this.handleChange}
+                    options={["Cats", "Dogs"]}
+                >
+                    Cats or dogs?
+                </Radio>
 
                 <Checkbox 
                     id="willLearn"
