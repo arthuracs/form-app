@@ -76,7 +76,7 @@ export default function Form() {
     }
     
     if (submitted === true) {
-        return <Results response={form} onReset={() => handleReset()} />
+        return <Results response={form} onReset={handleReset} />
     }
 
     const inputFields = {
